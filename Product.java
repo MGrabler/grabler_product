@@ -1,18 +1,21 @@
+package model;
 public class Product
 {
 	//----------------------------------Attribute----------------------------------------------------------------------------------
 	private String name;
 	private float price;
+	private int id;
 	
 	// ----------------------------------Constructor--------------------------------------------------------------------------------
-	public Product(String name, float price)
+	public Product(String name, float price, int id)
 	{
 		setName(name);
 		setPrice(price);
+		setId(id);
 	}
 	public Product()
 	{
-		this("Coca Cola", 10.0f);
+		this("Coca Cola", 10.0f, 0);
 	}
 	
 	// ----------------------------------Getter-------------------------------------------------------------------------------------
@@ -24,7 +27,10 @@ public class Product
 	{
 		return price;
 	}
-	
+	private int getId(int id)
+	{
+		return id;
+	}
 	// ----------------------------------Setter-------------------------------------------------------------------------------------
 	public void setName(String name)
 	{
@@ -49,7 +55,13 @@ public class Product
 		else
 			System.out.println("Fehler bei setPrice("+ price +"): Der Preis darf nicht kleiner/gleich 0€ sein!!!"); 
 	}
-	
+	private void setId(int id)
+	{
+		if(id >= 0 && id <= 1_000)
+			this.id = id;
+		else
+			System.out.println("Fehler bei setId("+ id +"): Die Id darf nicht kleiner 0 oder größer 1.000 sein!!!"); 
+	}
 	// ----------------------------------toString-------------------------------------------------------------------------------------
 	public String toString()
 	{
