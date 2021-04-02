@@ -1,11 +1,11 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Company
 {
 	//----------------------------------Attribute----------------------------------------------------------------------------------
-	private ArrayList<Product> products;
+	private LinkedList<Product> products;
 	private String name;
 	
 	// ----------------------------------Constructor--------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ public class Company
 	}
 	private void init()
 	{
-		new ArrayList<>(50);
+		new LinkedList<>();
 	}
 	
 	// ----------------------------------Getter-------------------------------------------------------------------------------------
