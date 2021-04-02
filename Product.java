@@ -1,14 +1,21 @@
 public class Product
 {
 	private String name;
+	private boolean onStock;
 	
 	public Product(String name)
 	{
 		setName(name);
 	}
-	public Product()
+	public Product(String name,boolean onStock)
 	{
-		setName("Coca Cola");
+		setName(name);
+		setOnStock(onStock);
+		
+	}
+	public Porduct()
+	{
+	this("Coca-Cola",true);
 	}
 
 	public String getName()
@@ -30,6 +37,16 @@ public class Product
 			System.out.println("Fehler bei setName(...): Null-Ref. erhalten!!!"); 
 	}
 	
+	public void setOnStock(boolean onStock)
+	{
+		if(this.onStock != onStock)
+		this.onStock = onStock;
+	}
+	
+	public boolean isOnStock()
+	{
+	return onStock;
+	}
 	public String toString()
 	{
 		String str = "";
