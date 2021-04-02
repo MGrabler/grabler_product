@@ -1,9 +1,46 @@
+package model;
+
+import java.util.ArrayList;
+
 public class Company
 {
+	//----------------------------------Attribute----------------------------------------------------------------------------------
 	private ArrayList<Product> products;
+	private String name;
 	
+	// ----------------------------------Constructor--------------------------------------------------------------------------------
+	public Company(String name)
+	{
+		setName(name);
+		init();
+	}
 	public Company()
 	{
-	products = new ArrayList<Product>;
+		this("IBM");
+	}
+	private void init()
+	{
+		new ArrayList<>(50);
+	}
+	
+	// ----------------------------------Getter-------------------------------------------------------------------------------------
+	public String getName()
+	{
+		return name;
+	}
+	
+	// ----------------------------------Setter-------------------------------------------------------------------------------------
+	public void setName(String name)
+	{
+		if(name != null)
+			if( ! name.isEmpty())
+				if(name.length() <= 100)
+					this.name = name.trim();
+				else
+					System.out.println("Fehler bei setName("+ name.length() +"): Es sind Maximal 100 Zeichen erlaubt!!!"); 
+			else
+				System.out.println("Fehler bei setName(...): Der Name ist leer!!!"); 
+		else
+			System.out.println("Fehler bei setName(...): Null-Ref. erhalten!!!"); 
 	}
 }
