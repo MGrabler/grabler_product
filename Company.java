@@ -1,9 +1,46 @@
+package model;
+
+import java.util.*;
+
 public class Company
 {
 	private TreeSet<Product> products;
+	//----------------------------------Attribute--------------------------------------------------------->
+	private String name;
 	
+	// ----------------------------------Constructor--------------------------------------------------------------------------------
+	public Company(String name)
+	{
+		setName(name);
+		init();
+	}
 	public Company()
 	{
-	products = new TreeSet<Product>;
+		this("IBM");
+	}
+	private void init()
+	{
+		products new TreeSet<>();
+	}
+	
+	// ----------------------------------Getter-------------------------------------------------------------------------------------
+	public String getName()
+	{
+		return name;
+	}
+	
+	// ----------------------------------Setter-------------------------------------------------------------------------------------
+	public void setName(String name)
+	{
+		if(name != null)
+			if( ! name.isEmpty())
+				if(name.length() <= 100)
+					this.name = name.trim();
+				else
+					System.out.println("Fehler bei setName("+ name.length() +"): Es sind Maximal 100 Zeichen erlaubt!!!"); 
+			else
+				System.out.println("Fehler bei setName(...): Der Name ist leer!!!"); 
+		else
+			System.out.println("Fehler bei setName(...): Null-Ref. erhalten!!!"); 
 	}
 }
