@@ -20,7 +20,7 @@ public class Company
 	}
 	private void init()
 	{
-		products new TreeSet<>();
+		products = new TreeSet<>();
 	}
 	
 	// ----------------------------------Getter-------------------------------------------------------------------------------------
